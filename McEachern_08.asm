@@ -164,6 +164,9 @@ checkSnakeCollision:
   CMP #$01                 ;If there is a white pixel already there, then end the game.
   BEQ endGame
   RTS
+  
+earlyReturn:
+  RTS
 
 updateUpSnake:  
   SEC 
@@ -257,9 +260,6 @@ updateHiPosSubtract:
   CMP snakeHeadH      ;Making sure that we dont go past the top of the screen.
   BEQ endGame
   ;BNE drawSnake     ;If we are still on the screen then go back to drawing the snake.
-  RTS
-  
-earlyReturn:
   RTS
  
 ;Ends the game and creates a pixel skull and bones. 
